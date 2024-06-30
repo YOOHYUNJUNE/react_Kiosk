@@ -7,29 +7,37 @@ function ProductDetail ({cart, removeMenu}) {
     const style = {
         // Detail style
         Detail : {
-            width : 150,
-            height : 120,
+            width : 200,
+            height : 200,
             display : 'inline-block',
             border : '1px solid black',
             textAlign : 'center',
-            backgroundSize : 'contain',
             
+        },
+
+        Img : {
+            width: '100%',
+            height: '100%',
         }
     }
 
 
     return(
         <div >
-            <ul>
+            <ul >
                 {
                     cart.map((menu, index) => {
                         // 장바구니 이미지
 
-                        return <li key={index} style={{...style.Detail, backgroundImage:`url(${menu.img})`}}>
-                            <p>{menu.name}</p>
-                            <p>{menu.price} 원</p>
-                            {/* <img src={menu.img} /> */}
+                        // return <li key={index} style={{...style.Detail, backgroundImage:`url(${menu.img})`}}>
+                        return <li key={index} style={{...style.Detail}}>
+
+                            <img src={menu.img} style={style.Img}></img>
+
+                            <p>
+                            {menu.name}
                             <button onClick={() => removeMenu(index)}>X</button>
+                            </p>
                             - {menu.quantity}개 -
                             
                         </li>

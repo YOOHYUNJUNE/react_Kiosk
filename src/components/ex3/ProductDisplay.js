@@ -48,6 +48,8 @@ function ProductDisplay({productList, changeMenu}) {
                                 >
                                 <img src={menu.img} alt={menu.name} style={style.Img}></img>
                                 {menu.name}
+                                <br></br>
+                                {menu.price} 원
                             </li>
                         )
                     })
